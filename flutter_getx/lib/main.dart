@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       translations: Languages(),
-      //fallbackLocale: const Locale('en', 'US'), uncomment this
+      fallbackLocale: const Locale('en', 'US'),
       locale: const Locale('en', 'US'),
       initialRoute: RouteClass.getHomeRoute(),
       getPages: RouteClass.routes,

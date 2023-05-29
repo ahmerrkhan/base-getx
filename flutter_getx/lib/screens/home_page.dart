@@ -59,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: double.infinity,
                       child: Column(
                         children: const <Widget>[
-                          //SizedBox.shrink(),
-                         // Text("Loading ..."),
+                          SizedBox.shrink(),
+                          Text("Loading ..."),
                         ],
                       ),
                     ),
@@ -71,6 +71,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   foregroundColor: Colors.green,
                 ),
                 child: const Text("This is default dialog")),
+            OutlinedButton(
+                onPressed: () {
+                  Get.bottomSheet(
+                    SizedBox(
+                      child: Wrap(
+                        children: <Widget>[
+                          ListTile(
+                            title: const Text("Dark Theme"),
+                            onTap: () => Get.changeTheme(ThemeData.dark()),
+                          ),
+                          ListTile(
+                            title: const Text("Light Theme"),
+                            onTap: () => Get.changeTheme(ThemeData.light()),
+                          ),
+                        ],
+                      ),
+                    ),
+                    barrierColor: Colors.green.shade100,
+                    backgroundColor: Colors.amber,
+                    isDismissible: true,
+                    enableDrag: true,
+                  );
+                },
+                child: const Text("This is default bottom sheet")),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(

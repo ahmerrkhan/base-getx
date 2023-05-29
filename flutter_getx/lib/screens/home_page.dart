@@ -38,6 +38,39 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: <Widget>[
             Text("screen".tr),
+            OutlinedButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                    barrierDismissible: false,
+                    title: 'Default Dialog',
+                    middleTextStyle: const TextStyle(color: Colors.green),
+                    middleText: 'This is also middle text it is shown when some larger text is used in this area',
+                    textCancel: 'Cancel',
+                    onCancel: () {},
+                    onConfirm: () {},
+                    actions: [
+                      OutlinedButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: const Text("Get Back 1ß"))
+                    ],
+                    content: SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        children: const <Widget>[
+                          //SizedBox.shrink(),
+                         // Text("Loading ..."),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  foregroundColor: Colors.green,
+                ),
+                child: const Text("This is default dialog")),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(
